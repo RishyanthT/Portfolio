@@ -1,0 +1,133 @@
+@use 'breakpoints' as bp;
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 90px;
+}
+
+.container {
+  width: 100%;
+}
+
+.header {
+  margin-bottom: 32px;
+
+  h1 {
+    margin: 0;
+    font-size: 40px;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  p {
+    margin-top: 10px;
+    max-width: 640px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  background: var(--surface);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    span {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #fff;
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-border);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+  }
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  h3 {
+    margin: 0 0 6px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  p,
+  a {
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--text);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li + li {
+      margin-top: 6px;
+    }
+  }
+}
+
+.primary {
+  margin-top: 10px;
+  align-self: flex-start;
+
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+
+  background: var(--text);
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--accent);
+  }
+}
+
+@include bp.md {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}

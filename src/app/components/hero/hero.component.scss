@@ -1,0 +1,45 @@
+@use 'breakpoints' as bp;
+
+.hero {
+  padding: 80px 0 40px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 56px;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.sub {
+  margin-top: 14px;
+  max-width: 720px;
+
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.divider {
+  margin-top: 22px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--border),
+    var(--accent-border),
+    var(--border)
+  );
+}
+
+@include bp.md {
+  h1 {
+    font-size: 44px;
+  }
+}
+
+@include bp.sm {
+  h1 {
+    font-size: 38px;
+  }
+}
