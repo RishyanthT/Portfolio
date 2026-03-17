@@ -4,18 +4,41 @@
   <section class="container">
     <app-hero></app-hero>
 
-    <section class="section" id="projects">
-      <div class="section-head">
-        <h2>Projects</h2>
-        <p class="caption">A small set of projects I'm proud of.</p>
+    <div class="projects-wrapper">
+      <button
+        class="scroll-btn left"
+        (click)="scroll('left')"
+        aria-label="Scroll Left"
+      >
+        ‹
+      </button>
+
+      <div class="projects-scroll" #scrollContainer>
+        @for (project of projects; track project.title) {
+          <article class="card">
+            <div class="card-body">
+              <h3>{{ project.title }}</h3>
+              <p class="caption">{{ project.description }}</p>
+
+              <div class="tag-list">
+                @for (tag of project.tags; track tag) {
+                  <span class="tag">{{ tag }}</span>
+                }
+              </div>
+            </div>
+            <a [href]="project.link" class="project-link">View Project →</a>
+          </article>
+        }
       </div>
 
-      <div class="grid">
-        <article class="card">Project One</article>
-        <article class="card">Project Two</article>
-        <article class="card">Project Three</article>
-      </div>
-    </section>
+      <button
+        class="scroll-btn right"
+        (click)="scroll('right')"
+        aria-label="Scroll Right"
+      >
+        ›
+      </button>
+    </div>
 
     <div class="divider"></div>
 
@@ -26,8 +49,10 @@
       </div>
 
       <div class="contact">
-        <a class="primary" href="mailto:your@email.com">Get in touch</a>
-        <a class="secondary" href="#">Download CV</a>
+        <div class="btn-group">
+          <a class="primary" href="mailto:your@email.com">Get in touch</a>
+          <a class="secondary" href="#">Download CV</a>
+        </div>
       </div>
     </section>
   </section>
