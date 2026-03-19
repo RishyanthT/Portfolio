@@ -1,4 +1,4 @@
-@use 'breakpoints' as bp;
+@use "breakpoints" as bp;
 
 .page {
   max-width: 1100px;
@@ -64,8 +64,13 @@
     border-radius: 10px;
     border: 1px solid var(--border);
     background: #fff;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid var(--border);
+    background: var(--surface-alt, #fafafa);
 
     &:focus {
+      background: #fff;
+      border-color: var(--accent);
       outline: none;
       border-color: var(--accent-border);
       box-shadow: 0 0 0 3px var(--accent-soft);
@@ -80,9 +85,11 @@
 
   h3 {
     margin: 0 0 6px;
-    font-size: 13px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
     color: var(--accent);
   }
 

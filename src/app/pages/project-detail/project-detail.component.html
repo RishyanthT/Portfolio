@@ -1,0 +1,79 @@
+@if (project) {
+  <main class="page project-detail">
+    <section class="container">
+      <header class="header centered-block">
+        <div class="meta-top">
+          <span class="muted">PROJECTS / {{ project.title | uppercase }}</span>
+          <a routerLink="/projects" class="back-link">← Gallery</a>
+        </div>
+
+        <h1>{{ project.title }}</h1>
+        <p class="description">{{ project.description }}</p>
+      </header>
+
+      @if (project.imageUrl) {
+        <div class="project-banner centered-block">
+          <img
+            [src]="project.imageUrl"
+            [alt]="project.title"
+            priority
+            style="width: 100%; height: auto"
+          />
+        </div>
+      }
+
+      <div class="split-content">
+        <aside class="metadata-aside">
+          <div class="meta-section">
+            <h4>Technologies</h4>
+            <p>{{ project.tags.join(", ") }}</p>
+          </div>
+
+          <div class="meta-section">
+            <h4>Role</h4>
+            <p>Full-Stack Developer</p>
+          </div>
+
+          <div class="action-buttons">
+            <a [href]="project.link" target="_blank" class="source-code-btn">
+              SOURCE CODE <span class="arrow">→</span>
+            </a>
+          </div>
+        </aside>
+
+        <article class="main-narrative">
+          <section class="flow-text">
+            <h2>The Challenge</h2>
+            <p>{{ project.challenge }}</p>
+          </section>
+
+          @if (project.challengeDeepDive) {
+            <div class="accent-block">
+              <p>{{ project.challengeDeepDive }}</p>
+            </div>
+          }
+
+          <section class="flow-text">
+            <h2>Visual Analytics & Heatmaps</h2>
+            <p>{{ project.solution }}</p>
+          </section>
+
+          @if (project.detailUrl) {
+            <div class="inline-screenshot">
+              <img [src]="project.detailUrl" alt="Analytics Detail" />
+            </div>
+          }
+
+          <div class="feature-grid">
+            @for (feature of project.features; track feature) {
+              <div class="feature-item">
+                <h4>{{ feature }}</h4>
+                <p>Implemented using Angular 19 and FastAPI.</p>
+              </div>
+            }
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+}

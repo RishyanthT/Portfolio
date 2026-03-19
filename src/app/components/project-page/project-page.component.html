@@ -1,5 +1,3 @@
-<app-navbar></app-navbar>
-
 <main class="page">
   <section class="container">
     <app-hero></app-hero>
@@ -14,7 +12,7 @@
       </button>
 
       <div class="projects-scroll" #scrollContainer>
-        @for (project of projects; track project.title) {
+        @for (project of projects; track project.id) {
           <article class="card">
             <div class="card-body">
               <h3>{{ project.title }}</h3>
@@ -26,7 +24,7 @@
                 }
               </div>
             </div>
-            <a [href]="project.link" class="project-link">View Project →</a>
+            <a [routerLink]="['/project', project.id]" class="project-link">View Case Study →</a>
           </article>
         }
       </div>

@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [FormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {}
+export class ContactComponent {
+  onSubmit() {
+    console.log('Form submitted!');
+  }
+}
