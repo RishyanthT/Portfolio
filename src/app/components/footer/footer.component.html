@@ -1,0 +1,23 @@
+<footer class="site-footer">
+  @if (nextProject) {
+    <a [routerLink]="['/project', nextProject.id]" class="next-project-hero">
+      <div class="container">
+        <span class="label">Next Project —</span>
+        <h2 class="next-title">{{ nextProject.title }}</h2>
+      </div>
+    </a>
+  }
+
+  <div class="footer-bottom container">
+    <div class="copyright">
+      <p>© 2026 RISHYANTH T.</p>
+      <span class="muted">Built with Angular 19 & FastAPI</span>
+    </div>
+
+    <div class="social-links">
+      <a href="https://github.com/RishyanthT" target="_blank">GITHUB</a>
+      <a href="#" target="_blank">LINKEDIN</a>
+      <a href="mailto:your-email@example.com">EMAIL</a>
+    </div>
+  </div>
+</footer>

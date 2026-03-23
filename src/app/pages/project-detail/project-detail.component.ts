@@ -2,11 +2,12 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { UpperCasePipe, CommonModule } from '@angular/common';
 import { ProjectService, Project } from '../../services/project.service';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-project-detail',
   standalone: true,
-  imports: [RouterLink, UpperCasePipe, CommonModule],
+  imports: [RouterLink, UpperCasePipe, CommonModule, FooterComponent],
   templateUrl: './project-detail.component.html',
   styleUrl: './project-detail.component.scss'
 })

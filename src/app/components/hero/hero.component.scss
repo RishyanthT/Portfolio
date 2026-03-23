@@ -1,45 +1,58 @@
 @use 'breakpoints' as bp;
 
 .hero {
-  padding: 80px 0 40px;
+  padding: 50px 0 40px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  background: rgba(128, 0, 0, 0.04);
+  border: 1px solid rgba(128, 0, 0, 0.1);
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #800000;
+  margin-bottom: 20px;
+
+  .dot { width: 6px; height: 6px; background: #800000; border-radius: 50%; }
 }
 
 h1 {
   margin: 0;
-  font-size: 56px;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 850;
   color: var(--text);
+  
+  @include bp.md { font-size: 48px; }
+  @include bp.sm { font-size: 38px; }
 }
 
 .sub {
-  margin-top: 14px;
-  max-width: 720px;
-
-  font-size: 15px;
-  line-height: 1.7;
+  margin-top: 20px;
+  max-width: 520px; 
+  font-size: 17px; 
+  line-height: 1.6;
   color: var(--muted);
 }
 
 .divider {
-  margin-top: 22px;
+  margin-top: 40px;
   height: 1px;
   background: linear-gradient(
     90deg,
-    var(--border),
-    var(--accent-border),
-    var(--border)
+    var(--border) 0%,
+    rgba(128, 0, 0, 0.2) 50%, 
+    var(--border) 100%
   );
 }
 
-@include bp.md {
-  h1 {
-    font-size: 44px;
-  }
-}
-
-@include bp.sm {
-  h1 {
-    font-size: 38px;
-  }
+.projects-grid {
+  padding-top: 15px;
 }

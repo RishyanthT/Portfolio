@@ -24,7 +24,9 @@
                 }
               </div>
             </div>
-            <a [routerLink]="['/project', project.id]" class="project-link">View Case Study →</a>
+            <a [routerLink]="['/project', project.id]" class="project-link"
+              >View Case Study →</a
+            >
           </article>
         }
       </div>
@@ -41,17 +43,38 @@
     <div class="divider"></div>
 
     <section class="section" id="contact">
-      <div class="section-head">
+      <div class="section-head centered">
         <h2>Let's Work Together</h2>
-        <p class="caption">Open to opportunities and collaborations.</p>
+        <p class="caption">
+          I'm currently open to new opportunities and interesting
+          collaborations.
+        </p>
       </div>
 
-      <div class="contact">
+      <div class="contact-card">
         <div class="btn-group">
-          <a class="primary" href="mailto:your@email.com">Get in touch</a>
-          <a class="secondary" href="#">Download CV</a>
+          <a
+            class="primary"
+            href="mailto:rishyanthvarma555@gmail.com"
+            (click)="handleEmailClick($event)"
+          >
+            Get in touch →
+          </a>
+
+          <a
+            class="secondary"
+            href="assets/resume-rishyanth.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Resume
+          </a>
         </div>
       </div>
+
+      @if (showCopyMessage) {
+        <div class="copy-toast">Email copied to clipboard!</div>
+      }
     </section>
   </section>
 </main>

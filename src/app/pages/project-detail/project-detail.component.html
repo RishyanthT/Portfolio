@@ -35,9 +35,23 @@
           </div>
 
           <div class="action-buttons">
-            <a [href]="project.link" target="_blank" class="source-code-btn">
+            <a
+              [href]="project.link"
+              target="_blank"
+              class="btn source-code-btn"
+            >
               SOURCE CODE <span class="arrow">→</span>
             </a>
+
+            @if (project.liveDemo) {
+              <a
+                [href]="project.liveDemo"
+                target="_blank"
+                class="btn live-demo-btn"
+              >
+                VIEW LIVE DEMO <span class="arrow">→</span>
+              </a>
+            }
           </div>
         </aside>
 
@@ -54,7 +68,7 @@
           }
 
           <section class="flow-text">
-            <h2>Visual Analytics & Heatmaps</h2>
+            <h2>Technical Implementations</h2>
             <p>{{ project.solution }}</p>
           </section>
 
@@ -74,6 +88,18 @@
           </div>
         </article>
       </div>
+
+      <nav class="post-project-nav">
+        <hr class="nav-divider" />
+        <div class="nav-content">
+          <span class="nav-label">FINISHED READING?</span>
+          <a routerLink="/projects" class="back-to-gallery-btn">
+            Back to Project Gallery <span class="arrow">→</span>
+          </a>
+        </div>
+      </nav>
     </section>
   </main>
 }
+
+<!-- <app-footer></app-footer> -->

@@ -1,22 +1,36 @@
 <main class="page">
   <section class="container">
     <div class="top">
-      <div class="photo" aria-hidden="true"></div>
+      <div class="photo">
+        <img src="assets/profile.webp" alt="Rishyanth Thotakura" />
+      </div>
 
       <div class="intro">
         <p class="kicker">ABOUT</p>
-        <h1>Building performant, scalable UI with Angular.</h1>
+        <h1>Building end-to-end systems with precision.</h1>
 
         <p class="bio">
-          I am Rishyanth Thotakura, a Frontend Developer specialized in the
-          Angular ecosystem. I bridge the gap between complex logic and
-          minimalist design, focusing on state management with RxJS and modular
-          component architecture.
+          I am <strong>Rishyanth Thotakura</strong>, a developer focused on
+          creating functional, high-performance web applications. I bridge the
+          gap between robust backend logic and minimalist frontend architecture,
+          turning complex data into clean user experiences.
         </p>
 
         <div class="actions">
-          <a class="primary" href="mailto:your@email.com">Email me</a>
-          <a class="secondary" href="#">Download CV</a>
+          <a
+            class="primary"
+            href="mailto:rishyanthvarma555@gmail.com"
+            (click)="handleEmailClick($event)"
+          >
+            Email me
+          </a>
+          <a
+            class="secondary"
+            href="assets/resume-rishyanth.pdf"
+            target="_blank"
+          >
+            View Resume
+          </a>
         </div>
       </div>
     </div>
@@ -25,10 +39,10 @@
       <section class="panel">
         <h2>What I focus on</h2>
         <ul>
-          <li>Angular component architecture (standalone, routing)</li>
+          <li>Full-stack architecture (Angular & FastAPI)</li>
+          <li>Data visualization & sports analytics</li>
           <li>Clean UI + responsive layouts (SCSS)</li>
-          <li>State + async flows (RxJS)</li>
-          <li>API integration and form handling</li>
+          <li>Performance-driven state management</li>
         </ul>
       </section>
 
@@ -37,12 +51,18 @@
         <div class="tags">
           <span class="tag">Angular</span>
           <span class="tag">TypeScript</span>
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
           <span class="tag">RxJS</span>
           <span class="tag">SCSS</span>
-          <span class="tag">REST APIs</span>
           <span class="tag">Git</span>
+          <span class="tag">REST APIs</span>
         </div>
       </section>
     </div>
   </section>
 </main>
+
+@if (showCopyMessage) {
+  <div class="copy-toast">Email copied to clipboard!</div>
+}

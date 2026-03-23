@@ -27,6 +27,18 @@
   background: linear-gradient(180deg, var(--accent-soft), transparent);
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center 20%; 
+    
+    display: block;
+  }
 
   &:hover {
     transform: scale(1.02);
@@ -170,4 +182,28 @@ h1 {
   .grid {
     grid-template-columns: 1fr;
   }
+}
+
+.copy-toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #800000; 
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  pointer-events: none; 
+  animation: toastAnimation 2.5s ease-in-out forwards;
+}
+
+@keyframes toastAnimation {
+  0% { opacity: 0; transform: translate(-50%, 20px); }
+  15% { opacity: 1; transform: translate(-50%, 0); }
+  85% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -20px); }
 }

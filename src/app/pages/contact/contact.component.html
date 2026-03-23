@@ -9,22 +9,37 @@
     </header>
 
     <section class="card">
-      <form class="form">
+      <form
+        class="form"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        (ngSubmit)="onSubmit()"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+
         <label>
           <span>Your name</span>
-          <input type="text" placeholder="Name" />
+          <input type="text" name="name" placeholder="Name" required />
         </label>
 
         <label>
           <span>Email address</span>
-          <input type="email" placeholder="example@email.com" />
+          <input
+            type="email"
+            name="email"
+            placeholder="example@email.com"
+            required
+          />
         </label>
 
         <label>
           <span>Message</span>
           <textarea
+            name="message"
             rows="5"
             placeholder="Tell me about your project..."
+            required
           ></textarea>
         </label>
 
@@ -34,22 +49,36 @@
       <aside class="meta">
         <div>
           <h3>Email</h3>
-          <a href="mailto:your&#64;email.com">your&#64;email.com</a>
+          <a href="mailto:rishyanthvarma555&#64;gmail.com"
+            >rishyanthvarma555&#64;gmail.com</a
+          >
         </div>
 
         <div>
           <h3>Location</h3>
-          <p>Canada</p>
+          <p>Milton, Ontario</p>
         </div>
 
         <div>
           <h3>Links</h3>
           <ul>
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">LinkedIn</a></li>
+            <li>
+              <a href="https://github.com/RishyanthT" target="_blank">GitHub</a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/rishyanthvthotakura/"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </li>
           </ul>
         </div>
       </aside>
     </section>
+
+    @if (submitted) {
+      <div class="copy-toast">Message sent successfully!</div>
+    }
   </section>
 </main>
