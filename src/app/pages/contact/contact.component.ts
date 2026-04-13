@@ -1,19 +1,24 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-  submitted = false;
+  showCopyMessage = false;
+  email = 'rishyanthvarma555@gmail.com';
 
-  onSubmit() {
-    this.submitted = true;
-    setTimeout(() => this.submitted = false, 5000);
+  handleEmailClick(event: Event) {
+    navigator.clipboard.writeText(this.email).then(() => {
+      this.showCopyMessage = true;
+
+      setTimeout(() => {
+        this.showCopyMessage = false;
+      }, 3000);
+    });
   }
 }

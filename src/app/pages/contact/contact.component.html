@@ -3,48 +3,38 @@
     <header class="header">
       <h1>Get in touch</h1>
       <p>
-        Have a question, opportunity, or just want to say hi? Feel free to reach
-        out.
+        I'm currently looking for new opportunities and collaborations. Whether
+        you have a question or just want to say hi, feel free to reach out.
       </p>
     </header>
 
     <section class="card">
-      <form
-        class="form"
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        (ngSubmit)="onSubmit()"
-      >
-        <input type="hidden" name="form-name" value="contact" />
+      <div class="direct-contact">
+        <h2>Let's build something together.</h2>
+        <p>
+          The best way to reach me is via email. I usually respond within 24
+          hours.
+        </p>
 
-        <label>
-          <span>Your name</span>
-          <input type="text" name="name" placeholder="Name" required />
-        </label>
+        <div class="actions">
+          <a
+            href="mailto:rishyanthvarma555&#64;gmail.com"
+            class="btn-primary"
+            (click)="handleEmailClick($event)"
+          >
+            Email me →
+          </a>
 
-        <label>
-          <span>Email address</span>
-          <input
-            type="email"
-            name="email"
-            placeholder="example@email.com"
-            required
-          />
-        </label>
-
-        <label>
-          <span>Message</span>
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Tell me about your project..."
-            required
-          ></textarea>
-        </label>
-
-        <button type="submit" class="primary">Send message</button>
-      </form>
+          <a
+            href="assets/resume-rishyanth.pdf"
+            class="btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Resume
+          </a>
+        </div>
+      </div>
 
       <aside class="meta">
         <div>
@@ -77,8 +67,8 @@
       </aside>
     </section>
 
-    @if (submitted) {
-      <div class="copy-toast">Message sent successfully!</div>
+    @if (showCopyMessage) {
+      <div class="copy-toast">Email copied to clipboard!</div>
     }
   </section>
 </main>

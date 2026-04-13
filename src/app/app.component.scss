@@ -2,9 +2,9 @@
 :host {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; // Force the app to be at least the full height of the screen
+  min-height: 100vh;
 }
 
 main {
-  flex: 1; // This tells 'main' to grow and take up all available space, pushing the footer down
+  flex: 1;
 }

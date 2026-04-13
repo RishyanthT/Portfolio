@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { HeroComponent } from '../hero/hero.component'; 
+import { HeroComponent } from '../hero/hero.component';
 import { ProjectService } from '../../services/project.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { ProjectService } from '../../services/project.service';
 export class ProjectPageComponent {
   private projectService = inject(ProjectService);
   projects = this.projectService.getProjects();
-  
+
   showCopyMessage = false;
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
@@ -22,7 +22,7 @@ export class ProjectPageComponent {
   scroll(direction: 'left' | 'right') {
     const container = this.scrollContainer.nativeElement;
     const scrollAmount = 400;
-    
+
     if (direction === 'left') {
       container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     } else {

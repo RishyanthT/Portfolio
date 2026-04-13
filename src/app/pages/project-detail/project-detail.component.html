@@ -35,13 +35,16 @@
           </div>
 
           <div class="action-buttons">
-            <a
-              [href]="project.link"
-              target="_blank"
-              class="btn source-code-btn"
-            >
-              SOURCE CODE <span class="arrow">→</span>
-            </a>
+            @if (project.link) {
+              <a
+                [href]="project.link"
+                target="_blank"
+                class="btn source-code-btn"
+              >
+                <span>SOURCE CODE</span>
+                <span class="arrow">→</span>
+              </a>
+            }
 
             @if (project.liveDemo) {
               <a
@@ -49,7 +52,8 @@
                 target="_blank"
                 class="btn live-demo-btn"
               >
-                VIEW LIVE DEMO <span class="arrow">→</span>
+                <span>VIEW LIVE DEMO</span>
+                <span class="arrow">→</span>
               </a>
             }
           </div>
@@ -74,15 +78,15 @@
 
           @if (project.detailUrl) {
             <div class="inline-screenshot">
-              <img [src]="project.detailUrl" alt="Analytics Detail" />
+              <img [src]="project.detailUrl" alt="Detail View" />
             </div>
           }
 
           <div class="feature-grid">
-            @for (feature of project.features; track feature) {
+            @for (feature of project.features; track feature.name) {
               <div class="feature-item">
-                <h4>{{ feature }}</h4>
-                <p>Implemented using Angular 19 and FastAPI.</p>
+                <h4>{{ feature.name }}</h4>
+                <p>{{ feature.detail }}</p>
               </div>
             }
           </div>
@@ -101,5 +105,3 @@
     </section>
   </main>
 }
-
-<!-- <app-footer></app-footer> -->
