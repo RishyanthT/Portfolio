@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, withViewTransitions, withInMemoryScrolling, withComponentInputBinding } from '@angular/router'; // Add these!
+import { provideRouter, withViewTransitions, withInMemoryScrolling, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
 

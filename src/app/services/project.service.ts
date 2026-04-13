@@ -36,10 +36,10 @@ export class ProjectService {
         'RxJS',
         'Tailwind CSS',
       ],
-      link: '', // Empty means the Source Code button will hide
+      link: '',
       liveDemo: 'https://pickodex.netlify.app',
-      imageUrl: 'assets/projects/pickodex-portfolio.webp',
-      detailUrl: 'assets/projects/pickodex-detail.webp',
+      imageUrl: 'assets/projects/picodex-portfolio.webp',
+      detailUrl: 'assets/projects/pickodexb-portfolio.webp',
       challenge:
         'Architecting a seamless cross-origin communication pipeline between a decoupled frontend and backend, while engineering a math-heavy scoring system that processes dynamic group averages in real-time.',
       challengeDeepDive:
@@ -147,10 +147,9 @@ export class ProjectService {
       description:
         'A real-time Pygame simulation of the RAFT consensus algorithm where nodes (towers) manage leadership transitions under active "enemy" pressure.',
       tags: ['Python', 'Pygame', 'Distributed Systems', 'Threading'],
-      link: 'https://github.com/RishyanthT/RaftSimulation', // Update with your actual repo link
-      liveDemo: '', // Since this is a local Python script, we leave this empty
-      imageUrl: 'assets/projects/raft-portfolio.webp',
-      detailUrl: 'assets/projects/raft-detail.webp',
+      link: 'https://github.com/RishyanthT/raft_updated',
+      liveDemo: '',
+      detailUrl: 'assets/projects/raft.webp',
       challenge:
         'Implementing the RAFT election logic (terms, heartbeats, and candidate states) in a multi-threaded environment where individual nodes can be "killed" by game entities.',
       challengeDeepDive:
@@ -176,7 +175,7 @@ export class ProjectService {
         {
           name: 'Dynamic State Rendering',
           detail:
-            'Visual color-coding (Blue: Leader, Yellow: Candidate, Red: Dead) to track consensus status.',
+            'Visual color-coding (Green: Leader, Blue: Candidate, Red: Dead) to track consensus status.',
         },
       ],
     },
