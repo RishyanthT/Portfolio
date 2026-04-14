@@ -1,29 +1,88 @@
 <header class="nav">
   <div class="nav-inner">
-    <a routerLink="/" class="brand">
+    <a routerLink="/" class="brand" (click)="closeMenu()">
       <span class="badge">&lt;/&gt;</span>
       <span class="name">RT</span>
     </a>
 
-    <nav class="links">
+    <nav class="links desktop-only">
       <a routerLink="/projects" routerLinkActive="active">Projects</a>
       <a routerLink="/about" routerLinkActive="active">About</a>
       <a routerLink="/contact" routerLinkActive="active">Contact</a>
     </nav>
 
     <div class="right">
-      <a
-        class="resume"
-        href="assets/resume-rishyanth.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
+      <div class="desktop-only-flex">
+        <a
+          class="resume"
+          href="assets/resume-rishyanth.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume
+        </a>
+        <button class="avatar" aria-label="Profile">
+          <img src="assets/profile.webp" alt="RT" class="avatar-img" />
+          <span class="avatar-dot"></span>
+        </button>
+      </div>
+
+      <button
+        class="mobile-toggle"
+        (click)="toggleMenu()"
+        aria-label="Toggle Menu"
       >
-        Resume
-      </a>
-      <button class="avatar" aria-label="Profile">
-        <img src="assets/profile.webp" alt="RT" class="avatar-img" />
-        <span class="avatar-dot"></span>
+        @if (!isMenuOpen) {
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        } @else {
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        }
       </button>
     </div>
+  </div>
+
+  <div class="mobile-menu" [class.open]="isMenuOpen">
+    <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()"
+      >Projects</a
+    >
+    <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()"
+      >About</a
+    >
+    <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()"
+      >Contact</a
+    >
+    <a
+      href="assets/resume-rishyanth.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      (click)="closeMenu()"
+      class="mobile-resume"
+      >View Resume</a
+    >
   </div>
 </header>
